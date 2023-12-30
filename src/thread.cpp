@@ -324,6 +324,10 @@ namespace bx
 		ti->m_threadId = ::GetCurrentThreadId();
 #endif // BX_PLATFORM_WINDOWS
 
+		#if BX_PLATFORM_OSX
+		pthread_setname_np("bgfx - renderer backend thread");
+		#endif
+
 		m_sem.post();
 		int32_t result = m_fn(this, m_userData);
 		return result;
