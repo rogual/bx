@@ -550,11 +550,6 @@ function toolchain(_buildDir, _libDir)
 			"-Wno-tautological-constant-compare",
 		}
 
-	configuration { "vs*", "not ARM64", "not NX32", "not NX64" }
-		flags {
-			"EnableAVX",
-		}
-
 	configuration { "vs*", "not orbis", "not NX32", "not NX64" }
 		includedirs { path.join(bxDir, "include/compat/msvc") }
 		defines {
