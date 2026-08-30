@@ -449,7 +449,7 @@
 #	define BX_CPP_NAME "C++Unknown"
 #endif // defined(__cplusplus)
 
-#if BX_COMPILER_MSVC && (!defined(_MSVC_TRADITIONAL) || _MSVC_TRADITIONAL)
+#if BX_COMPILER_MSVC && (!defined(_MSVC_TRADITIONAL) || _MSVC_TRADITIONAL) && !defined(BX_CONFIG_ALLOW_MSVC_TRADITIONAL_PREPROCESSOR)
 #	error "When using MSVC you must set /Zc:preprocessor compiler option."
 #endif // BX_COMPILER_MSVC && (!defined(_MSVC_TRADITIONAL) || _MSVC_TRADITIONAL)
 
